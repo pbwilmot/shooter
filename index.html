@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>Learning WebGL &mdash; lesson 10</title>
+<title>shooter</title>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
 <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
@@ -348,7 +348,7 @@
 
 
     function webGLStart() {
-        var canvas = document.getElementById("lesson10-canvas");
+        var canvas = document.getElementById("canvas");
         initGL(canvas);
         initShaders();
         initTexture();
@@ -381,19 +381,12 @@
 
 
 <body onload="webGLStart();">
-    <a href="http://learningwebgl.com/blog/?p=1067">&lt;&lt; Back to Lesson 10</a><br />
 
-    <canvas id="lesson10-canvas" style="border: none;" width="500" height="500"></canvas>
+    <canvas id="canvas" style="border: none;" width="500" height="500"></canvas>
 
-    <div id="loadingtext">Loading world...</div>
-
-    <br/>
     Use the cursor keys or WASD to run around, and <code>Page Up</code>/<code>Page Down</code> to
 look up and down.
 
-    <br/>
-    <br/>
-    <a href="http://learningwebgl.com/blog/?p=1067">&lt;&lt; Back to Lesson 10</a>
 </body>
 
 </html>
