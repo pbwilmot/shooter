@@ -1,0 +1,7 @@
+to run on localhost:
+
+- (package manager) install node
+- (package manager) install npm
+- npm install node-static
+- node run.node.js
+- navigate to localhost:8080
