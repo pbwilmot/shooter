@@ -218,8 +218,8 @@
 		PrevMouseX = x;
 		PrevMouseY = y;
 		
-		//yaw +=.1 * deltaX;
-		pitch +=.1 * deltaY;
+		yaw -=.1 * deltaX;
+		pitch -=.1 * deltaY;
 		
 		console.log("deltaX : " + deltaX);
 		console.log("deltaY : " + deltaY);
@@ -240,11 +240,11 @@
         if (currentlyPressedKeys[37] || currentlyPressedKeys[65]) {
             // Left cursor key or A
             //yawRate = 0.1;
-			strafe_speed = 0.1;
+			strafe_speed = 0.01;
         } else if (currentlyPressedKeys[39] || currentlyPressedKeys[68]) {
             // Right cursor key or D
             //yawRate = -0.1;
-			strafe_speed = -0.1;
+			strafe_speed = -0.01;
         } else {
             //yawRate = 0;
 			strafe_speed = 0;
