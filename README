@@ -9,6 +9,12 @@ to run on localhost:
 * navigate to localhost:8080
 
 some notes on coffeescript:
-* when you make a new .coffee file in src, you must add it to the list in Cakefile. (cake build concatenates the .coffee files before compiling. the output of a coffeescript compile is all held in one closure, so in order for the scripts to interact, they must be concatenated first.)
 * cake build outputs app.js to lib/
+* when you make a new .coffee file in src, you must add it to the list in Cakefile. 
+    (cake build concatenates the .coffee files in the order specified before compiling. 
+    the output of a coffeescript compile is all held in one closure, so in order for 
+    the scripts to interact, they must be concatenated first.)
 * index.html should <script> include all library js files before app.js
+
+documentation:
+*inline markdown documentation of methods. this allows docco to generate nice docs.
