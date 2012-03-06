@@ -1,10 +1,20 @@
 to run on localhost:
 
-- (package manager) install node
-- (package manager) install npm
-- npm install node-static
-- node run.node.js
-- navigate to localhost:8080
+* (package manager) install node
+* (package manager) install npm
+* npm install node-static
+* npm install coffee-script
+* cake build
+* node run.node.js
+* navigate to localhost:8080
 
+some notes on coffeescript:
+* cake build outputs app.js to lib/
+* when you make a new .coffee file in src, you must add it to the list in Cakefile. 
+    (cake build concatenates the .coffee files in the order specified before compiling. 
+    the output of a coffeescript compile is all held in one closure, so in order for 
+    the scripts to interact, they must be concatenated first.)
+* index.html should <script> include all library js files before app.js
 
-if we go all coffeescript with this, we will want to convert the stuff we already have in JS to it with js2coffee.org
+documentation:
+*inline markdown documentation of methods. this allows docco to generate nice docs.
