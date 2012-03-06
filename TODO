@@ -1,3 +1,4 @@
+*decide whether to make a proper vector library. and how gl-matrix.js plays in.
 *move all game logic to coffeescript
 *fix strafing and camera by using camera class
 *move shaders to external files using the methodology outlined at http://stackoverflow.com/questions/4878145/javascript-and-webgl-external-scripts
