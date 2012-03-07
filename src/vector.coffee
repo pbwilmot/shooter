@@ -128,8 +128,9 @@ class Vector3
     return @x * @x + @y * @y + @z * @z
   
   dot: (vec) ->
-    return @x * vec.x + @y * vec.y
-  
+    return @x * vec.x + @y * vec.y + @z * vec.z
+  cross: (vec) ->
+    return new Vector3(@y * vec.z - @z * vec.y, @z * vec.x - @x * vec.z, @x * vec.y - @y * vec.x)
   normalize: ->
     len = @length()
     @x /= len
