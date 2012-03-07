@@ -3,7 +3,7 @@ class Camera
   yaw: 0
   look: 0
   fresh_look: false
-  constructor: =>
+  constructor: ->
     this.look = vec3.create()
   setPitch: (p) =>
     this.pitch = p
@@ -15,7 +15,7 @@ class Camera
     return this.pitch
   getYaw: =>
     return this.yaw
-  getLook: =>
+###  getLook: =>
     if not this.fresh_look
       vec3.set([Math.sin((this.yaw*Math.PI)/180)*Math.cos((this.pitch*Math.PI)/180), -Math.sin((this.pitch*Math.PI)/180), -Math.cos((this.yaw*Math.PI)/180)*Math.cos((this.pitch*Math.PI)/180)], this.look)
       vec3.normalize(this.look)
@@ -23,4 +23,5 @@ class Camera
     return this.look
   getHorizontalLook: =>
     vlook = this.getLook()
-    return vec2.normalize(vlook[0], vlook[2])
+    return Vec2.normalize(vlook[0], vlook[2])
+    ###
