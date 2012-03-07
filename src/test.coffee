@@ -37,7 +37,10 @@ console.log v.x,v.y
 v.add(v)
 console.log v.x,v.y
 
+<<<<<<< HEAD
 #test sub
 
 #test mult
 
+n = new WorldObject()
+console.log(n)

@@ -1,13 +1,13 @@
-class Vec2
+class Vector2
   constructor:(@x=0,@y=0) ->
-    if typeof @x is "Vec2"
+    if typeof @x is "Vector2"
       vec2=@x
       @x=vector.x
       @y=vector.y
   
   # add ascalar
   add: (vec) ->
-    if typeof vec is "Vec2"
+    if typeof vec is "Vector2"
       this.x += vec.x
       this.y += vec.y
     else
@@ -16,7 +16,7 @@ class Vec2
   
   #subtract a scalar
   sub: (vec) ->
-    if typeof vec is "Vec2"
+    if typeof vec is "Vector2"
       this.x -= vec.x
       this.y -= vec.y
     else
@@ -25,7 +25,7 @@ class Vec2
   
   #multiply by a vector
   mult: (vec) ->
-    if typeof vec is "Vec2"
+    if typeof vec is "Vector2"
       this.x *= vec.x
       this.y *= vec.y
     else
@@ -62,7 +62,7 @@ class Vec2
 
   unit: ->
     len = this.length
-    return Vec2(this.x / len, this.y / len)
+    return new Vector2(this.x / len, this.y / len)
 
   lerp: (a,b,fraction) ->
       return a.add(b.sub(a)).mult(fraction)

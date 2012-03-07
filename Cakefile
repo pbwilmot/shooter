@@ -1,7 +1,13 @@
 fs     = require 'fs'
 {exec} = require 'child_process'
 
-appFiles  = ['vector', 'camera', 'test']
+appFiles  = [
+  'vector' 
+  'worldobject'
+  'player'
+  'camera'
+  'test'
+]
 
 task 'build', 'Build single application file from source files', ->
   appContents = new Array remaining = appFiles.length
