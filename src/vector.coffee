@@ -41,7 +41,7 @@ class Vector2
   
   #check equality
   equals: (vec) ->
-    if @x == vec.x and @y == vec.y
+    if @x is vec.x and @y is vec.y
       return true
   
   length: ->
@@ -118,7 +118,7 @@ class Vector3
       @z /= vec
   #check equality
   equals: (vec) ->
-    if vec instanceof Vector3 and @x == vec.x and @y == vec.y and @z == vec.z
+    if vec instanceof Vector3 and @x is vec.x and @y is vec.y and @z is vec.z
       return true
   
   length: ->
