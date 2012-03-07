@@ -64,26 +64,5 @@ class Vec2
     len = this.length
     return Vec2(this.x / len, this.y / len)
 
-  lerp: () ->
-      
-  lerp: () ->
-  
-  min: -> 
-    
-  min: ->
-  
-  max: ->
-  
-  max: ->
-  
-  floor: ->
-  
-  ceil: ->
-  
-  abs: ->
-  
-  toAngle: ->
-  
-  fromAngle: (theta) ->
-  
-  randomDirection: ->
+  lerp: (a,b,fraction) ->
+      return a.add(b.sub(a)).mult(fraction)
