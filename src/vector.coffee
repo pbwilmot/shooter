@@ -1,7 +1,7 @@
 class Vector2
   constructor:(@x=0,@y=0) ->
-    if @x instanceof Vector2
-      vec=@x
+    if x instanceof Vector2
+      vec=x
       @x=vec.x
       @y=vec.y
   
@@ -88,7 +88,7 @@ class Vector3
     return this.z
   # add ascalar
   add: (vec) ->
-    if typeof vec is "Vector2"
+    if vec instanceof Vector3
       this.x += vec.getX()
       this.y += vec.getY()
     else
