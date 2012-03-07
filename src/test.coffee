@@ -37,7 +37,6 @@ console.log v.x,v.y
 v.add(v)
 console.log v.x,v.y
 
-<<<<<<< HEAD
 #test sub
 
 #test mult
