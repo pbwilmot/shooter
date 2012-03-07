@@ -95,7 +95,7 @@ class Vector3
       @y -= vec
       @z -= vec
   
-  #multiply by a vector
+  #multiply by a Vector3 or scalar
   mult: (vec) ->
     if vec instanceof Vector3
       @x *= vec.x
@@ -106,7 +106,7 @@ class Vector3
       @y *= vec
       @z *= vec
   
-  #divide by a vector
+  #divide by a Vector3 or scalar
   divide: (vec) ->
     if vec instanceof Vector3
       @x /= vec.x
@@ -116,11 +116,13 @@ class Vector3
       @x /= vec
       @y /= vec
       @z /= vec
-  #check equality
+      
+  #check equality between Vector3s
   equals: (vec) ->
     if vec instanceof Vector3 and @x is vec.x and @y is vec.y and @z is vec.z
       return true
   
+  #return length of vector
   length: ->
 	  return Math.sqrt(@lengthSquared())
   

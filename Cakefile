@@ -2,8 +2,9 @@ fs     = require 'fs'
 {exec} = require 'child_process'
 
 appFiles  = [
-  'vector' 
+  'vector'
   'worldobject'
+  'lookingobject'
   'player'
   'camera'
   'test'

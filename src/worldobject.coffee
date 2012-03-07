@@ -1,36 +1,27 @@
+###
+***WorldObject***
+The constructor for world object takes one of:
+  *Nothing; indicating a default location of (0,0,0)
+  *A Vector3 indicating the default location
+  *an x,y, and, z indicating the default location
+###
 class WorldObject
-  location : new Vector3(0,0,0)
-  look: 0
-  pitch: 0
-  yaw: 0
-  fresh_look: false
-  constructor: (x=0,y=0,z=0)->
-    @location = new Vector3(x,y,z)
-    @look = new Vector3(x,y,z)
-  setLocation: (x=0,y=0,z=0)->
-    @location = new Vector3(x,y,z)
-  setPitch: (p) ->
-    @pitch = p
-    @fresh_look = false
-  setYaw: (y) ->
-    @yaw = y
-    @fresh_look = false
-  getPitch: ->
-    return @pitch
-  getYaw: ->
-    return @yaw
+  location: new Vector3(0,0,0)
+  
+  constructor: (x=0,y=0,z=0) ->
+    @setLocation(x,y,z)
+    
+  setLocation: (x,y,z) ->
+    if x instanceof Vector3
+      @location = x
+    else if x? and y? and z?
+      @location.x = x
+      @location.y = y 
+      @location.z = z
+      
   getLocation: ->
     return @location
-  getLook: ->
-    if not @fresh_look
-      @look = new Vector3(Math.sin((@yaw*Math.PI)/180)*Math.cos((@pitch*Math.PI)/180), -Math.sin((@pitch*Math.PI)/180), -Math.cos((@yaw*Math.PI)/180)*Math.cos((@pitch*Math.PI)/180))
-      @look.normalize()
-      @fresh_look = true
-    return @look
-  getHorizontalLook: ->
-    vlook = @getLook()
-    hlook = new Vector2(vlook.x, vlook.z)
-    hlook.normalize()
-    return hlook
-  synchronizeWithWorldObject: (obj)->
-    @location = obj.getLocation()
+    
+  synchronizeWithWorldObject: (obj) ->
+    if obj.location instanceof Vector3
+      @location = obj.location
