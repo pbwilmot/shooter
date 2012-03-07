@@ -1,9 +1,10 @@
-class Camera
+class Camera extends WorldObject
   pitch: 0
   yaw: 0
   look: 0
   fresh_look: false
   constructor: (x=0,y=0,z=0)->
+    super(x,y,z)
     this.look = new Vector3(x,y,z)
   setPitch: (p) ->
     this.pitch = p
