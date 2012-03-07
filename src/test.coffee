@@ -37,3 +37,5 @@ console.log v.x,v.y
 v.add(v)
 console.log v.x,v.y
 
+n = new WorldObject()
+console.log(n)

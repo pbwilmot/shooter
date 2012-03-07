@@ -1,2 +1,2 @@
 class WorldObject
-  pos : Vector3()
+ #pos : new Vector3()
