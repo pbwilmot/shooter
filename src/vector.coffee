@@ -1,9 +1,13 @@
 class Vector2
-  constructor:(@x=0,@y=0) ->
-    if typeof @x is "Vector2"
-      vec2=@x
-      @x=vector.x
-      @y=vector.y
+  x: 0;
+  y: 0;
+  constructor:(x=0,y=0) ->
+    if typeof x is "Vector2"
+      this.x = x.x
+      this.y = x.y
+    else
+      this.x = x
+      this.y = y
   
   getX: ->
     return this.x
