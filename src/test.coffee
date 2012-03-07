@@ -8,11 +8,12 @@ z=new Vector2(v)
 console.log(z)
 
 
-###test add
+#test add
 v.add(1)
-console.log v.getX(),v.getY()
+console.log v
 v.add(v)
-console.log v.getX(),v.getY()
+console.log "double"
+console.log x
 
 #test sub
 
@@ -21,4 +22,3 @@ console.log v.getX(),v.getY()
 
 n = new WorldObject()
 console.log(n)
-###
