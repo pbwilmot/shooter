@@ -20,8 +20,8 @@ class Vector2
       this.x -= vec.x
       this.y -= vec.y
     else
-    this.x -= vec
-    this.y -= vec
+      this.x -= vec
+      this.y -= vec
   
   #multiply by a vector
   mult: (vec) ->
@@ -29,12 +29,12 @@ class Vector2
       this.x *= vec.x
       this.y *= vec.y
     else
-    this.x *= vec
-    this.y *= vec
+      this.x *= vec
+      this.y *= vec
   
   #divide by a vector
-  mult: (vec) ->
-    if typeof vec is "Vector2"
+  divide: (vec) ->
+    if typeof vec is "Vec2"
       this.x /= vec.x
       this.y /= vec.y
     else
