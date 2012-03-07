@@ -6,44 +6,40 @@ class Vec2
       @y=vector.y
   
   # add ascalar
-  add: (val) ->
-    this.x += val
-    this.y += val
-  
-  #add avector
   add: (vec) ->
-    this.x += vec.x
-    this.y += vec.y
+    if typeof vec is "Vec2"
+      this.x += vec.x
+      this.y += vec.y
+    else
+      this.x += vec
+      this.y += vec
   
   #subtract a scalar
-  sub: (val) ->
-    this.x -= val
-    this.y -= val
-  
-  #subtract a vector
   sub: (vec) ->
-    this.x -= vec.x
-    this.y -= vec.y
-  
-  #multiply by a scalar
-  mult: (val) ->
-    this.x *= val
-    this.y *= val
+    if typeof vec is "Vec2"
+      this.x -= vec.x
+      this.y -= vec.y
+    else
+    this.x -= vec
+    this.y -= vec
   
   #multiply by a vector
   mult: (vec) ->
-    this.x *= vec.x
-    this.y *= vec.y
-  
-  #divide by a scalar
-  mult: (val) ->
-    this.x /= val
-    this.y /= val
+    if typeof vec is "Vec2"
+      this.x *= vec.x
+      this.y *= vec.y
+    else
+    this.x *= vec
+    this.y *= vec
   
   #divide by a vector
   mult: (vec) ->
-    this.x /= vec.x
-    this.y /= vec.y
+    if typeof vec is "Vec2"
+      this.x /= vec.x
+      this.y /= vec.y
+    else
+    this.x /= vec
+    this.y /= vec
   
   #check equality
   equals: (vec) ->
@@ -68,26 +64,5 @@ class Vec2
     len = this.length
     return Vec2(this.x / len, this.y / len)
 
-  lerp: () ->
-      
-  lerp: () ->
-  
-  min: -> 
-    
-  min: ->
-  
-  max: ->
-  
-  max: ->
-  
-  floor: ->
-  
-  ceil: ->
-  
-  abs: ->
-  
-  toAngle: ->
-  
-  fromAngle: (theta) ->
-  
-  randomDirection: ->
+  lerp: (a,b,fraction) ->
+      return a.add(b.sub(a)).mult(fraction)
