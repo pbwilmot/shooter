@@ -38,6 +38,8 @@
 
 
 <script type="text/javascript">
+//set mouse listener
+
 	jQuery(document).ready(function(){
 	   $(document).mousemove(function(e){
 		//console.log(e.pageX);
@@ -46,7 +48,7 @@
 	})
 
     var gl;
-
+	
     function initGL(canvas) {
         try {
             gl = canvas.getContext("experimental-webgl");
@@ -419,7 +421,7 @@
 
 <body onload="webGLStart();">
 
-    <canvas id="canvas" style="border: none;" width="500" height="500"></canvas>
+    <canvas id="canvas" style="border: none;" width="1000" height="1000"></canvas>
 
     Use the cursor keys or WASD to run around, and <code>Page Up</code>/<code>Page Down</code> to
 look up and down.

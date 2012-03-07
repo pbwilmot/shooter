@@ -23,3 +23,17 @@ x.setYaw(45)
 x.setPitch(45)
 y = x.getHorizontalLook()
 console.log(y)
+
+#TEST VECTOR CONSTRUCTOR
+v = new Vec2();
+console.log v.x,v.y
+v=new Vec2(1,1)
+console.log v.x,v.y
+v=new Vec2(x:1,y:1)
+console.log v.x,v.y
+  #test add
+v.add(1)
+console.log v.x,v.y
+v.add(v)
+console.log v.x,v.y
+
