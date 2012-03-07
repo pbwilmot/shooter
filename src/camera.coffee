@@ -1,5 +1,5 @@
 class Camera
-	pitch: 0
+  pitch: 0
 	yaw: 0
 	look: 0
 	fresh_look: false
