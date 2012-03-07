@@ -21,4 +21,3 @@ console.log x
 #test mult
 
 n = new WorldObject()
-console.log(n)

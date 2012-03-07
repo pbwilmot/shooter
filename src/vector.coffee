@@ -73,11 +73,10 @@ class Vector2
 #TODO FIX ALL THIS
 class Vector3
   constructor:(@x=0,@y=0, @z=0) ->
-    if @x instanceof Vector3
-      vec=@x
-      @x=vec.x
-      @y=vec.y
-      @z=vec.z
+    if x instanceof Vector3
+      @x=x.x
+      @y=x.y
+      @z=x.z
   
   getX: ->
     return @x
@@ -87,9 +86,9 @@ class Vector3
     return @z
   # add ascalar
   add: (vec) ->
-    if typeof vec is "Vector2"
-      @x += vec.getX()
-      @y += vec.getY()
+    if vec instanceof Vector3
+      this.x += vec.getX()
+      this.y += vec.getY()
     else
       @x += vec
       @y += vec
