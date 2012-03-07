@@ -5,32 +5,32 @@ class WorldObject
   yaw: 0
   fresh_look: false
   constructor: (x=0,y=0,z=0)->
-    this.location = new Vector3(x,y,z)
-    this.look = new Vector3(x,y,z)
+    @location = new Vector3(x,y,z)
+    @look = new Vector3(x,y,z)
   setLocation: (x=0,y=0,z=0)->
-    this.location = new Vector3(x,y,z)
+    @location = new Vector3(x,y,z)
   setPitch: (p) ->
-    this.pitch = p
-    this.fresh_look = false
+    @pitch = p
+    @fresh_look = false
   setYaw: (y) ->
-    this.yaw = y
-    this.fresh_look = false
+    @yaw = y
+    @fresh_look = false
   getPitch: ->
-    return this.pitch
+    return @pitch
   getYaw: ->
-    return this.yaw
+    return @yaw
   getLocation: ->
-    return this.location
+    return @location
   getLook: ->
-    if not this.fresh_look
-      this.look = new Vector3(Math.sin((this.yaw*Math.PI)/180)*Math.cos((this.pitch*Math.PI)/180), -Math.sin((this.pitch*Math.PI)/180), -Math.cos((this.yaw*Math.PI)/180)*Math.cos((this.pitch*Math.PI)/180))
-      this.look.normalize()
-      this.fresh_look = true
-    return this.look
+    if not @fresh_look
+      @look = new Vector3(Math.sin((@yaw*Math.PI)/180)*Math.cos((@pitch*Math.PI)/180), -Math.sin((@pitch*Math.PI)/180), -Math.cos((@yaw*Math.PI)/180)*Math.cos((@pitch*Math.PI)/180))
+      @look.normalize()
+      @fresh_look = true
+    return @look
   getHorizontalLook: ->
-    vlook = this.getLook()
+    vlook = @getLook()
     hlook = new Vector2(vlook.x, vlook.z)
     hlook.normalize()
     return hlook
   synchronizeWithWorldObject: (obj)->
-    this.location = obj.getLocation()
+    @location = obj.getLocation()

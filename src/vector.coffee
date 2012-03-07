@@ -1,72 +1,71 @@
 class Vector2
   constructor:(@x=0,@y=0) ->
     if x instanceof Vector2
-      vec=x
-      @x=vec.x
-      @y=vec.y
+      @x=x.x
+      @y=x.y
   
   getX: ->
-    return this.x
+    return @x
   getY: ->
-    return this.y
+    return @y
   # add ascalar
   add: (vec) ->
     if vec instanceof Vector2
-      this.x += vec.getX()
-      this.y += vec.getY()
+      @x += vec.getX()
+      @y += vec.getY()
     else
-      this.x += vec
-      this.y += vec
+      @x += vec
+      @y += vec
   
   #subtract a scalar
   sub: (vec) ->
     if vec instanceof Vector2
-      this.x -= vec.x
-      this.y -= vec.y
+      @x -= vec.x
+      @y -= vec.y
     else
-      this.x -= vec
-      this.y -= vec
+      @x -= vec
+      @y -= vec
   
   #multiply by a vector
   mult: (vec) ->
     if vec instanceof Vector2
-      this.x *= vec.x
-      this.y *= vec.y
+      @x *= vec.x
+      @y *= vec.y
     else
-      this.x *= vec
-      this.y *= vec
+      @x *= vec
+      @y *= vec
   
   #divide by a vector
   divide: (vec) ->
     if vec instanceof Vector2
-      this.x /= vec.x
-      this.y /= vec.y
+      @x /= vec.x
+      @y /= vec.y
     else
-    this.x /= vec
-    this.y /= vec
+    @x /= vec
+    @y /= vec
   
   #check equality
   equals: (vec) ->
-    if this.x == vec.x and this.y == vec.y
+    if @x == vec.x and @y == vec.y
       return true
   
   length: ->
-	  return Math.sqrt(this.x * this.x + this.y * this.y)
+	  return Math.sqrt(@x * @x + @y * @y)
   
   lengthSquared: ->
-    return this.x * this.x + this.y * this.y
+    return @x * @x + @y * @y
   
   dot: (vec) ->
-    return this.x * vec.x + this.y * vec.y
+    return @x * vec.x + @y * vec.y
   
   normalize: ->
-    len = this.length
-    this.x /= len
-    this.y /= len
+    len = @length
+    @x /= len
+    @y /= len
 
   unit: ->
-    len = this.length
-    return new Vector2(this.x / len, this.y / len)
+    len = @length
+    return new Vector2(@x / len, @y / len)
 
   lerp: (a,b,fraction) ->
       return a.add(b.sub(a)).mult(fraction)
@@ -74,76 +73,75 @@ class Vector2
 #TODO FIX ALL THIS
 class Vector3
   constructor:(@x=0,@y=0, @z=0) ->
-    if @x instanceof Vector3
-      vec=@x
-      @x=vec.x
-      @y=vec.y
-      @z=vec.z
+    if x instanceof Vector3
+      @x=x.x
+      @y=x.y
+      @z=x.z
   
   getX: ->
-    return this.x
+    return @x
   getY: ->
-    return this.y
+    return @y
   getZ: ->
-    return this.z
+    return @z
   # add ascalar
   add: (vec) ->
     if vec instanceof Vector3
       this.x += vec.getX()
       this.y += vec.getY()
     else
-      this.x += vec
-      this.y += vec
+      @x += vec
+      @y += vec
   
   #subtract a scalar
   sub: (vec) ->
     if typeof vec is "Vector2"
-      this.x -= vec.x
-      this.y -= vec.y
+      @x -= vec.x
+      @y -= vec.y
     else
-      this.x -= vec
-      this.y -= vec
+      @x -= vec
+      @y -= vec
   
   #multiply by a vector
   mult: (vec) ->
     if typeof vec is "Vector2"
-      this.x *= vec.x
-      this.y *= vec.y
+      @x *= vec.x
+      @y *= vec.y
     else
-      this.x *= vec
-      this.y *= vec
+      @x *= vec
+      @y *= vec
   
   #divide by a vector
   divide: (vec) ->
     if typeof vec is "Vec2"
-      this.x /= vec.x
-      this.y /= vec.y
+      @x /= vec.x
+      @y /= vec.y
     else
-    this.x /= vec
-    this.y /= vec
+    @x /= vec
+    @y /= vec
   
   #check equality
   equals: (vec) ->
-    if this.x == vec.x and this.y == vec.y
+    if @x == vec.x and @y == vec.y
       return true
   
   length: ->
-	  return Math.sqrt(this.x * this.x + this.y * this.y)
+	  return Math.sqrt(@x * @x + @y * @y)
   
   lengthSquared: ->
-    return this.x * this.x + this.y * this.y
+    return @x * @x + @y * @y
   
   dot: (vec) ->
-    return this.x * vec.x + this.y * vec.y
+    return @x * vec.x + @y * vec.y
   
   normalize: ->
-    len = this.length
-    this.x /= len
-    this.y /= len
+    len = @length
+    @x /= len
+    @y /= len
 
   unit: ->
-    len = this.length
-    return new Vector2(this.x / len, this.y / len)
+    len = @length
+    return new Vector2(@x / len, @y / len)
 
   lerp: (a,b,fraction) ->
       return a.add(b.sub(a)).mult(fraction)
