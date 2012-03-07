@@ -24,18 +24,18 @@ x.setPitch(45)
 
 #TEST VECTOR CONSTRUCTOR
 v = new Vector2();
-console.log v.x,v.y
+console.log v.getX(),v.getY()
 v=new Vector2(1,1)
-console.log v.x,v.y
+console.log v.getX(),v.getY()
 v=new Vector2(v)
-console.log v.x,v.y
+console.log v.getX(),v.getY()
 
 
 #test add
 v.add(1)
-console.log v.x,v.y
+console.log v.getX(),v.getY()
 v.add(v)
-console.log v.x,v.y
+console.log v.getX(),v.getY()
 
 #test sub
 
