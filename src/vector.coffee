@@ -1,9 +1,9 @@
 class Vector2
   constructor:(@x=0,@y=0) ->
-    if typeof @x is "Vector2"
-      vec2=@x
-      @x=vector.x
-      @y=vector.y
+    if @x instanceof Vector2
+      vec=@x
+      @x=vec.x
+      @y=vec.y
   
   getX: ->
     return this.x
@@ -11,7 +11,7 @@ class Vector2
     return this.y
   # add ascalar
   add: (vec) ->
-    if typeof vec is "Vector2"
+    if vec instanceof Vector2
       this.x += vec.getX()
       this.y += vec.getY()
     else
@@ -20,7 +20,7 @@ class Vector2
   
   #subtract a scalar
   sub: (vec) ->
-    if typeof vec is "Vector2"
+    if vec instanceof Vector2
       this.x -= vec.x
       this.y -= vec.y
     else
@@ -29,7 +29,7 @@ class Vector2
   
   #multiply by a vector
   mult: (vec) ->
-    if typeof vec is "Vector2"
+    if vec instanceof Vector2
       this.x *= vec.x
       this.y *= vec.y
     else
@@ -38,7 +38,7 @@ class Vector2
   
   #divide by a vector
   divide: (vec) ->
-    if typeof vec is "Vector2"
+    if vec instanceof Vector2
       this.x /= vec.x
       this.y /= vec.y
     else
@@ -74,11 +74,11 @@ class Vector2
 #TODO FIX ALL THIS
 class Vector3
   constructor:(@x=0,@y=0, @z=0) ->
-    if typeof @x is "Vector3"
-      Vector3=@x
-      @x=vector.x
-      @y=vector.y
-      @z=vector.z
+    if @x instanceof Vector3
+      vec=@x
+      @x=vec.x
+      @y=vec.y
+      @z=vec.z
   
   getX: ->
     return this.x
