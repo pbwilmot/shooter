@@ -3,16 +3,11 @@ class Vector2
     if x instanceof Vector2
       @x=x.x
       @y=x.y
-  
-  getX: ->
-    return @x
-  getY: ->
-    return @y
   # add ascalar
   add: (vec) ->
     if vec instanceof Vector2
-      @x += vec.getX()
-      @y += vec.getY()
+      @x += vec.x
+      @y += vec.y
     else
       @x += vec
       @y += vec
@@ -50,7 +45,7 @@ class Vector2
       return true
   
   length: ->
-	  return Math.sqrt(@x * @x + @y * @y)
+	  return Math.sqrt(@lengthSquared())
   
   lengthSquared: ->
     return @x * @x + @y * @y
@@ -59,12 +54,12 @@ class Vector2
     return @x * vec.x + @y * vec.y
   
   normalize: ->
-    len = @length
+    len = @length()
     @x /= len
     @y /= len
 
   unit: ->
-    len = @length
+    len = @length()
     return new Vector2(@x / len, @y / len)
 
   lerp: (a,b,fraction) ->
@@ -77,73 +72,74 @@ class Vector3
       @x=x.x
       @y=x.y
       @z=x.z
-  
-  getX: ->
-    return @x
-  getY: ->
-    return @y
-  getZ: ->
-    return @z
-  # add ascalar
+    
+  # add allows you to add a scalar or a vector3.
   add: (vec) ->
     if vec instanceof Vector3
-      this.x += vec.getX()
-      this.y += vec.getY()
+      @x += vec.x
+      @y += vec.y
+      @z += vec.z
     else
       @x += vec
       @y += vec
+      @z += vec
   
-  #subtract a scalar
+  #subtract a scalar or a Vector3
   sub: (vec) ->
-    if typeof vec is "Vector2"
+    if vec instanceof Vector3
       @x -= vec.x
       @y -= vec.y
+      @z -= vec.z
     else
       @x -= vec
       @y -= vec
+      @z -= vec
   
   #multiply by a vector
   mult: (vec) ->
-    if typeof vec is "Vector2"
+    if vec instanceof Vector3
       @x *= vec.x
       @y *= vec.y
+      @z *= vec.z
     else
       @x *= vec
       @y *= vec
+      @z *= vec
   
   #divide by a vector
   divide: (vec) ->
-    if typeof vec is "Vec2"
+    if vec instanceof Vector3
       @x /= vec.x
       @y /= vec.y
+      @z /= vec.z
     else
-    @x /= vec
-    @y /= vec
-  
+      @x /= vec
+      @y /= vec
+      @z /= vec
   #check equality
   equals: (vec) ->
-    if @x == vec.x and @y == vec.y
+    if vec instanceof Vector3 and @x == vec.x and @y == vec.y and @z == vec.z
       return true
   
   length: ->
-	  return Math.sqrt(@x * @x + @y * @y)
+	  return Math.sqrt(@lengthSquared())
   
   lengthSquared: ->
-    return @x * @x + @y * @y
+    return @x * @x + @y * @y + @z * @z
   
   dot: (vec) ->
     return @x * vec.x + @y * vec.y
   
   normalize: ->
-    len = @length
+    len = @length()
     @x /= len
     @y /= len
+    @z /= len
+    return @
 
   unit: ->
-    len = @length
-    return new Vector2(@x / len, @y / len)
+    len = @length()
+    return new Vector3(@x / len, @y / len, @z / len)
 
   lerp: (a,b,fraction) ->
       return a.add(b.sub(a)).mult(fraction)
-
-
