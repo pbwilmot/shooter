@@ -91,8 +91,3 @@ class Vec2
   fromAngle: (theta) ->
   
   randomDirection: ->
-
-
-
-
-
